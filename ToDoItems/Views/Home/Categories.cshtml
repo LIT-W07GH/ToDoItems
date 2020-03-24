@@ -1,0 +1,27 @@
+﻿@model List<Category>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <a href="/home/newcategory" class="btn btn-success">New Category</a>
+        <br />
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <th>Category Name</th>
+                <th>Edit</th>
+            </tr>
+            @foreach (Category category in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="/home/ByCategory?id=@category.Id">
+                            @category.Name
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/home/editcategory?id=@category.Id" class="btn btn-warning">Edit</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@model List<ToDoItem>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <table class="table table-hover table-striped table-bordered">
+            <tr>
+                <th>Title</th>
+                <th>Category Name</th>
+                <th>Completed Date</th>
+            </tr>
+
+            @foreach (ToDoItem item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.CompletedDate.Value.ToShortDateString()</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

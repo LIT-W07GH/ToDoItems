@@ -1,0 +1,12 @@
+﻿@model Category
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <form method="post" action="/home/updatecategory">
+            <input type="text" value="@Model.Name" class="input-lg form-control" placeholder="Category Name" name="name" />
+            <input type="hidden" name="id" value="@Model.Id" />
+            <br />
+            <button class="btn btn-danger">Update</button>
+        </form>
+    </div>
+</div>

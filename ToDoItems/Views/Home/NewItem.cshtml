@@ -1,0 +1,23 @@
+﻿@model List<Category>
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-6 col-md-offset-3">
+        <form method="post" action="/home/newitem">
+            <input type="text" class="input-lg form-control" placeholder="Title" name="title" />
+            <br />
+            <br />
+            <input type="date" class="input-lg form-control" placeholder="Due Date" name="dueDate" />
+            <br />
+            <br />
+            <select class="form-control" name="categoryid">
+                @foreach (Category category in Model)
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            </select>
+            <br />
+            <br />
+            <button class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
